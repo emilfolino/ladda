@@ -15,40 +15,65 @@
 
 <header>
     <div class="inner-header">
-        <h1>auth Documentation</h1>
+        <h1>Ladda dokumentation</h1>
     </div>
 </header>
 
 <main class="content">
     <section id="toc">
         <ol>
-            <li><a href="#apikeys">API keys</a></li>
-            <li><a href="#auth">Register and login</a></li>
-            <li><a href="#users">Users</a></li>
-            <li><a href="#data">User data</a></li>
-            <li><a href="#code">Code examples</a></li>
+            <li><a href="#posts">Posts</a></li>
         </ol>
     </section>
 
 
-    <section id="apikeys">
-        <h2>API keys</h2>
-        <p><a href="/api_key">Request a personal API key.</a></p>
+    <section id="posts">
+        <h2>Posts</h2>
 
-        <p>An API key is required for all requests.</p>
-
-        <p>If an API key is not provided the following error is given:</p>
+        <h3>Get all posts</h3>
+        <pre class="lager">GET /posts</pre>
+        <p>Result:</p>
         <pre class="lager">{
-            "errors": {
-            "status": 401,
-            "source": "/products",
-            "title": "Valid API key",
-            "detail": "No valid API key provided."
-        }
+  "data": [
+    {
+      "name": "Laddstolpe 1 vänster",
+      "identifier": "1L"
+    },
+    {
+      "name": "Laddstolpe 1 höger",
+      "identifier": "1R"
+    },
+    {
+      "name": "Laddstolpe 2 vänster",
+      "identifier": "2L"
+    },
+    {
+      "name": "Laddstolpe 2 höger",
+      "identifier": "2R"
+    },
+    {
+      "name": "Laddstolpe 3 vänster",
+      "identifier": "3L"
+    },
+    {
+      "name": "Laddstolpe 3 höger",
+      "identifier": "3R"
+    },
+    {
+      "name": "Laddstolpe 4 vänster",
+      "identifier": "4L"
+    },
+    {
+      "name": "Laddstolpe 4 höger",
+      "identifier": "4R"
+    }
+  ]
 }</pre>
+
+
     </section>
 
-    <section id="auth">
+    <!-- <section id="auth">
         <h2>Register and login</h2>
 
         <h3>Register</h3>
@@ -353,7 +378,7 @@ m.request({
 
 });</code>
 </pre>
-    </section>
+    </section> -->
 </main>
 
 <footer class="footer">

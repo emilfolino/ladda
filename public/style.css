@@ -19,7 +19,7 @@ body {
 }
 
 header {
-    background-color: #ff714c;
+    background-color: #ffff4c;
 }
 
 .content {
@@ -43,8 +43,8 @@ main {
 }
 
 pre.lager {
-    background: #ff714c;
-    border-left: 6px solid #7f1a00;
+    background: #ffff4c;
+    border-left: 6px solid #80800c;
     padding: 10px;
     box-sizing: border-box;
     margin-bottom: 1.4rem;
@@ -78,7 +78,7 @@ ol {
 }
 
 .footer {
-    background-color: #7f1a00;
+    background-color: #80800c;
     color: white;
     padding: 4rem 0;
 }

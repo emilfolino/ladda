@@ -1,8 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    return res.json({ data: "hej" });
+const postsModel = require('../models/posts.js');
+
+router.get('/', async (req, res) => {
+    const posts = await postsModel.getAllPosts();
+
+    return res.json({ data: posts });
 });
 
 module.exports = router;

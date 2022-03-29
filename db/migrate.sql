@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS posts (
+    name VARCHAR(255) NOT NULL,
+    identifier VARCHAR(32) UNIQUE NOT NULL
+);
