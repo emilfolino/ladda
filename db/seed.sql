@@ -8,6 +8,6 @@ INSERT INTO posts (name, identifier) VALUES ("Laddstolpe 4 vänster", "4L");
 INSERT INTO posts (name, identifier) VALUES ("Laddstolpe 4 höger", "4R");
 
 INSERT INTO bookings (username, startDate, postId) VALUES ("efo", "2022-04-06 10:00:00", 1);
-INSERT INTO bookings (username, startDate, postId) VALUES ("efo", "2022-04-07 13:00:00", 1);
+INSERT INTO bookings (username, startDate, postId) VALUES ("aar", "2022-04-07 13:00:00", 1);
 INSERT INTO bookings (username, startDate, postId) VALUES ("aar", "2022-04-06 10:00:00", 3);
-INSERT INTO bookings (username, startDate, postId) VALUES ("aar", "2022-04-06 13:00:00", 3);
+INSERT INTO bookings (username, startDate, postId) VALUES ("efo", "2022-04-06 13:00:00", 3);
