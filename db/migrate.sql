@@ -2,3 +2,10 @@ CREATE TABLE IF NOT EXISTS posts (
     name VARCHAR(255) NOT NULL,
     identifier VARCHAR(32) UNIQUE NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS bookings (
+    startDate VARCHAR(19) NOT NULL,
+    username TEXT NOT NULL,
+    postId INTEGER NOT NULL,
+    FOREIGN KEY(postId) REFERENCES posts(id)
+);

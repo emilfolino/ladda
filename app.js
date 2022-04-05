@@ -7,6 +7,7 @@ const cors = require('cors');
 const app = express();
 
 const posts = require("./routes/posts.js");
+const bookings = require("./routes/bookings.js");
 
 const port = 8345;
 
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
 app.use("/posts", posts);
+app.use("/bookings", bookings);
 
 app.get('/', (req, res) => {
     res.redirect('/documentation.html');

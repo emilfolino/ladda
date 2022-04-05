@@ -23,6 +23,7 @@
     <section id="toc">
         <ol>
             <li><a href="#posts">Posts</a></li>
+            <li><a href="#bookings">Bookings</a></li>
         </ol>
     </section>
 
@@ -66,6 +67,40 @@
     {
       "name": "Laddstolpe 4 höger",
       "identifier": "4R"
+    }
+  ]
+}</pre>
+
+
+    </section>
+
+    <section id="posts">
+        <h2>Bookings</h2>
+
+        <h3>Get all bookings</h3>
+        <pre class="lager">GET /bookings</pre>
+        <p>Result:</p>
+        <pre class="lager">{
+  "data": [
+    {
+      "startDate": "2022-04-06 10:00:00",
+      "username": "efo",
+      "postId": 1
+    },
+    {
+      "startDate": "2022-04-07 13:00:00",
+      "username": "efo",
+      "postId": 1
+    },
+    {
+      "startDate": "2022-04-06 10:00:00",
+      "username": "aar",
+      "postId": 3
+    },
+    {
+      "startDate": "2022-04-06 13:00:00",
+      "username": "aar",
+      "postId": 3
     }
   ]
 }</pre>
