@@ -23,4 +23,14 @@ router.get('/:post_id', async (req, res) => {
     return res.json({ data: bookings });
 });
 
+router.get('/user/:username', async (req, res) => {
+    const bookings = await bookingsModel.getBookingsByUsername(req.params.username);
+
+    if (Object.prototype.hasOwnProperty.call(bookings, 'errors')) {
+        return res.json(bookings);
+    }
+
+    return res.json({ data: bookings });
+});
+
 module.exports = router;

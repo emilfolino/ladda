@@ -38,7 +38,7 @@ const bookings = {
             return {
                 errors: {
                     status: 500,
-                    path: "/bookings",
+                    path: "/bookings/:post_id",
                     title: error.message,
                     description: error.message,
                 }
@@ -46,7 +46,30 @@ const bookings = {
         } finally {
             await db.close();
         }
-    }
+    },
+    getBookingsByUsername: async function getBookingsByUsername(username) {
+        let db;
+
+        try {
+            db = await database.openDb();
+
+            const query = "SELECT * FROM bookings WHERE username = ?";
+            const rows = await db.all(query, username);
+
+            return rows;
+        } catch (error) {
+            return {
+                errors: {
+                    status: 500,
+                    path: "/bookings/:username",
+                    title: error.message,
+                    description: error.message,
+                }
+            };
+        } finally {
+            await db.close();
+        }
+    },
 };
 
 module.exports = bookings;
