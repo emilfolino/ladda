@@ -6,7 +6,7 @@ const postsModel = require('../models/posts.js');
 router.get('/', async (req, res) => {
     const posts = await postsModel.getAllPosts();
 
-    if (Object.prototype.hasOwnProperty.call(bookings, 'errors')) {
+    if (Object.prototype.hasOwnProperty.call(posts, 'errors')) {
         return res.json(posts);
     }
 
