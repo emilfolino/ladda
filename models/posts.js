@@ -7,7 +7,7 @@ const posts = {
         try {
             db = await database.openDb();
 
-            const query = "SELECT * FROM posts";
+            const query = "SELECT *, ROWID as id FROM posts";
             const rows = await db.all(query);
 
             return rows;

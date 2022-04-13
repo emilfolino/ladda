@@ -70,6 +70,58 @@ const bookings = {
             await db.close();
         }
     },
+
+    addBooking: async function addBooking(body) {
+        let db;
+
+        try {
+            db = await database.openDb();
+
+            const query = "INSERT INTO bookings (startDate, hours, username, postId) VALUES (?, ?, ?, ?)";
+            const result = await db.run(
+              query,
+              body.start,
+              body.hours,
+              body.username,
+              body.post,
+            );
+
+            return result.lastID;
+        } catch (error) {
+            return {
+                errors: {
+                    status: 500,
+                    path: "POST /bookings",
+                    title: error.message,
+                    description: error.message,
+                }
+            };
+        } finally {
+            await db.close();
+        }
+    },
+
+    getBookingByID: async function getBookingByID(id) {
+        let db;
+
+        try {
+            db = await database.openDb();
+            const result = await db.get('SELECT * FROM bookings WHERE ROWID = ?', id);
+
+            return result;
+        } catch (error) {
+            return {
+                errors: {
+                    status: 500,
+                    path: "POST /bookings",
+                    title: error.message,
+                    description: error.message,
+                }
+            };
+        } finally {
+            await db.close();
+        }
+    }
 };
 
 module.exports = bookings;

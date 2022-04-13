@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS posts (
 
 CREATE TABLE IF NOT EXISTS bookings (
     startDate VARCHAR(19) NOT NULL,
+    hours INTEGER NOT NULL,
     username TEXT NOT NULL,
     postId INTEGER NOT NULL,
     FOREIGN KEY(postId) REFERENCES posts(id)
