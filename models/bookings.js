@@ -7,7 +7,7 @@ const bookings = {
         try {
             db = await database.openDb();
 
-            const query = "SELECT * FROM bookings";
+            const query = "SELECT b.startDate, b.hours, b.postId, u.email FROM bookings b INNER JOIN users u ON u.ROWID = b.userId";
             const rows = await db.all(query);
 
             return rows;
@@ -30,7 +30,7 @@ const bookings = {
         try {
             db = await database.openDb();
 
-            const query = "SELECT * FROM bookings WHERE postId = ?";
+            const query = "SELECT b.startDate, b.hours, b.postId, u.email FROM bookings b INNER JOIN users u ON u.ROWID = b.userId WHERE postId = ?";
             const rows = await db.all(query, postId);
 
             return rows;
@@ -47,14 +47,14 @@ const bookings = {
             await db.close();
         }
     },
-    getBookingsByUsername: async function getBookingsByUsername(username) {
+    getBookingsByUsername: async function getBookingsByUsername(userId) {
         let db;
 
         try {
             db = await database.openDb();
 
-            const query = "SELECT * FROM bookings WHERE username = ?";
-            const rows = await db.all(query, username);
+            const query = "SELECT b.startDate, b.hours, b.postId, u.email FROM bookings b INNER JOIN users u ON u.ROWID = b.userId WHERE b.userId = ?";
+            const rows = await db.all(query, userId);
 
             return rows;
         } catch (error) {
@@ -77,12 +77,12 @@ const bookings = {
         try {
             db = await database.openDb();
 
-            const query = "INSERT INTO bookings (startDate, hours, username, postId) VALUES (?, ?, ?, ?)";
+            const query = "INSERT INTO bookings (startDate, hours, userId, postId) VALUES (?, ?, ?, ?)";
             const result = await db.run(
               query,
               body.start,
               body.hours,
-              body.username,
+              body.userId,
               body.post,
             );
 

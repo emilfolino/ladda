@@ -8,6 +8,9 @@ const app = express();
 
 const posts = require("./routes/posts.js");
 const bookings = require("./routes/bookings.js");
+const auth = require("./routes/auth.js");
+
+require('dotenv').config();
 
 const port = 8345;
 
@@ -32,6 +35,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // Routes
 app.use("/posts", posts);
 app.use("/bookings", bookings);
+app.use("/", auth);
 
 app.get('/', (req, res) => {
     res.redirect('/documentation.html');
