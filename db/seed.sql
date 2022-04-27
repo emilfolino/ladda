@@ -1,3 +1,5 @@
+INSERT INTO posts (name, identifier, latitude, longitude) VALUES ("Laddstolpe H430", "H430", 56.182174, 15.590936);
+INSERT INTO posts (name, identifier, latitude, longitude) VALUES ("Laddstolpe Centrum", "C", 56.161221, 15.586853);
 INSERT INTO posts (name, identifier, latitude, longitude) VALUES ("Laddstolpe 1 vänster", "1L", 56.181720, 15.591118);
 INSERT INTO posts (name, identifier, latitude, longitude) VALUES ("Laddstolpe 1 höger", "1R", 56.181720, 15.591118);
 INSERT INTO posts (name, identifier, latitude, longitude) VALUES ("Laddstolpe 2 vänster", "2L", 56.181699, 15.591268);
