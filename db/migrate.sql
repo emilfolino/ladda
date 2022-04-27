@@ -1,6 +1,8 @@
 CREATE TABLE IF NOT EXISTS posts (
     name VARCHAR(255) NOT NULL,
-    identifier VARCHAR(32) UNIQUE NOT NULL
+    identifier VARCHAR(32) UNIQUE NOT NULL,
+    latitude REAL NOT NULL,
+    longitude REAL NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS users (

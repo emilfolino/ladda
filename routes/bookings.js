@@ -16,7 +16,7 @@ async function doCheckToken(req, res, next) {
 }
 
 router.get('/',
-    async (req, res, next) => await doCheckToken(req, res, next),
+    // async (req, res, next) => await doCheckToken(req, res, next),
     async (req, res) => {
         const bookings = await bookingsModel.getAllBookings();
 
@@ -29,7 +29,7 @@ router.get('/',
 );
 
 router.post("/",
-    async (req, res, next) => await doCheckToken(req, res, next),
+    // async (req, res, next) => await doCheckToken(req, res, next),
     async (req, res) => {
         const orderId = await bookingsModel.addBooking(req.body);
 
@@ -48,7 +48,7 @@ router.post("/",
 );
 
 router.get("/:booking_id",
-    async (req, res, next) => await doCheckToken(req, res, next),
+    // async (req, res, next) => await doCheckToken(req, res, next),
     async (req, res) => {
         let bookings = await bookingsModel.getBookingByID(req.params.booking_id);
 
@@ -65,7 +65,7 @@ router.get("/:booking_id",
 );
 
 router.get('/post/:post_id',
-    async (req, res, next) => await doCheckToken(req, res, next),
+    // async (req, res, next) => await doCheckToken(req, res, next),
     async (req, res) => {
         const bookings = await bookingsModel.getBookingsByPost(req.params.post_id);
 
@@ -78,7 +78,7 @@ router.get('/post/:post_id',
 );
 
 router.get('/user/:user_id',
-    async (req, res, next) => await doCheckToken(req, res, next),
+    // async (req, res, next) => await doCheckToken(req, res, next),
     async (req, res) => {
         const bookings = await bookingsModel.getBookingsByUsername(req.params.user_id);
 
